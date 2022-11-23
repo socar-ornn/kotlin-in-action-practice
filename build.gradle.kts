@@ -31,6 +31,9 @@ dependencies {
 
     // https://mvnrepository.com/artifact/com.google.guava/guava
     implementation("com.google.guava:guava:31.1-jre")
+
+    // 코루틴
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
 }
 
 tasks.withType<KotlinCompile> {

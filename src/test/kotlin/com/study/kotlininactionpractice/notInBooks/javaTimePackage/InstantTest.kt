@@ -6,6 +6,7 @@ import java.time.Instant
 import java.time.Year
 import java.time.ZoneId
 import java.time.ZoneOffset
+import java.time.format.DateTimeFormatter
 
 class InstantTest {
     // Instant클래스는 시간을 타임스탬프로 다루기 위해 사용한다
@@ -58,4 +59,39 @@ class InstantTest {
         logger.info("britishTime =  $zdtUTC, britishZoneTimeEpochSecond = ${zdtUTC.epochSecond}")
         logger.info("koreaTime =  $zdtKR, koreaTimeEpochSecond = ${zdtKR.epochSecond}")
     }
+
+    @Test
+    fun `dateTimeFormmater로 날짜 출력형식 변경하기`() {
+        // given
+        val now = Instant.now()
+        val dateTimeFormatter = DateTimeFormatter.ofPattern("MM/dd HH:mm").withZone(ZoneId.of("Asia/Seoul"))
+
+        // when
+        val formattedTime = dateTimeFormatter.format(now)
+
+        // then
+        logger.info(formattedTime)
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
